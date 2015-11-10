@@ -11,7 +11,7 @@ module RailsTranslator
         prev = t.values
 
         trans.each do |locale, value|
-          prev[locale] = value
+          prev[locale] = value unless value == '' || value.nil?
         end
 
         t.update_attributes(values: prev)
