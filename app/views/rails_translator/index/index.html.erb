@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Translations</title>
+  <%= stylesheet_link_tag 'rails_translator/application', media: 'all' %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body data-no-turbolink="true">
+
+<div class="container">
+
+  <h4>Překlady</h4>
+
+  <div>
+    <strong>Pro jazyk:</strong>
+    <% I18n.available_locales.each do |locale| %>
+        <%= link_to locale, rails_translator.index_path(locale: locale) %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <%= form_tag({}, method: 'get') do %>
+      <%= text_field_tag 'query', params[:query], class: 'form-control', placeholder: 'Hledat', id: 'search' %>
+      <%= hidden_field_tag 'locale', @locale %>
+  <% end %>
+
+  <hr>
+
+  <%= form_tag do %>
+      <% @translations.each do |trans| %>
+          <div class="row">
+            <div class="form-group">
+              <div class="col-sm-2">
+                <label for="translations[#{trans.key}][sk]"><%= trans.key %></label>
+              </div>
+              <div class="col-sm-10">
+                <%= text_field_tag "translations[#{trans.key}][#{@locale}]", trans.values[@locale], class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      <%= submit_tag 'Save', class: 'btn btn-success' %>
+  <% end %>
+
+  <%= will_paginate @translations %>
+</div>
+
+<%= javascript_include_tag 'rails_translator/application' %>
+</body>
+</html>
