@@ -48,7 +48,7 @@ module RailsTranslator
         Dir.glob(Rails.root.join('./**/*.erb')).each do |file|
           open(file) do |f|
             f.each_line.select do |line|
-              matches = /t\([^t\'(]\'(.*)\'\)/.match(line)
+              matches = /t\(\'(.*)\'\)/.match(line)
               if matches.nil? || matches[1].nil?
                 next
               end
