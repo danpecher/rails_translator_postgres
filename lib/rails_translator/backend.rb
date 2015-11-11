@@ -25,6 +25,10 @@ module RailsTranslator
           throw(:exception, I18n::MissingTranslation.new(locale, key, options))
         end
 
+        if result == ''
+          return key
+        end
+
         options.each { |k, v| result.gsub!(/%\{.*\}/, v) if v.is_a? String }
 
         return result
