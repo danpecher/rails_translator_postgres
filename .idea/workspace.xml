@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="437c701e-75ed-4efd-986b-b76ab7e5b275" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rails_translator/backend.rb" afterPath="$PROJECT_DIR$/lib/rails_translator/backend.rb" />
-    </list>
+    <list default="true" id="437c701e-75ed-4efd-986b-b76ab7e5b275" name="Default" comment="" />
     <ignored path="rails_translator.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />

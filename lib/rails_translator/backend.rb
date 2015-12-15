@@ -68,12 +68,10 @@ module RailsTranslator
         end
 
         keys.each do |key|
-          translations.push(Translation.create(key: key))
+          translations.push(Translation.create(key: key, locale: I18n.default_locale))
         end
         translations.each do |item|
-          item.values.each do |locale, translation|
-            Rails.cache.write("rails_translator.#{item[:key]}.#{locale}", translation)
-          end
+          Rails.cache.write("rails_translator.#{item.key}.#{item.locale}", item.value)
         end
       end
 

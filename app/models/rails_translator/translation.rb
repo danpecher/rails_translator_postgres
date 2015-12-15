@@ -1,7 +1,4 @@
 module RailsTranslator
-  class Translation
-    include Mongoid::Document
-    field :key
-    field :values, type: Hash, default: {}
+  class Translation < ActiveRecord::Base
   end
 end

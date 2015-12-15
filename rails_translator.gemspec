@@ -17,12 +17,11 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.2.4"
-  s.add_dependency 'mongoid'
+  s.add_dependency 'pg'
 
   s.add_dependency 'sass-rails'
   s.add_dependency 'bootstrap-sass'
   s.add_dependency 'will_paginate'
-  s.add_dependency 'will_paginate_mongoid'
   s.add_dependency 'will_paginate-bootstrap'
 
   s.add_development_dependency "sqlite3"

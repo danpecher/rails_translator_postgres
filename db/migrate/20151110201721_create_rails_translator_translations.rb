@@ -1,9 +1,9 @@
 class CreateRailsTranslatorTranslations < ActiveRecord::Migration
   def change
     create_table :rails_translator_translations do |t|
-      t.string :key,value
-
-      t.timestamps null: false
+      t.string :key
+      t.string :value
+      t.string :locale
     end
   end
 end
