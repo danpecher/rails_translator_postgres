@@ -33,9 +33,12 @@ module RailsTranslator
 
         keys.uniq!
 
-        to_create = []
-
-        translations = Translation.all.to_a
+        begin
+          translations = Translation.all.to_a
+        rescue
+          puts 'Rails Translator: couldn\'t retrieve translations'
+          return
+        end
 
         translations.each do |item|
           keys.reject! { |v| v == item.key }
